@@ -16,10 +16,14 @@ public class Problem4
 		// find the first palindrome we can.
 
 		// I guess we could do the brute force way.
-		int first = 999;
-		int second = 999;
+		int n = 999;
+		int first = n;
+		int second = n;
 		int largest = 0;
 		for (int i = first; i > 0; i--) {
+			if (i * 999 < largest) {
+				continue;
+			}
 			for (int j = second; j > 0; j--) {
 				int result = i*j;
 				if (isPalindrome(result) && result > largest) {
