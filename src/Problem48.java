@@ -22,5 +22,20 @@ public class Problem48
 		}
 		String str = total.toString();
 		System.out.println(str.substring(str.length() - 10, str.length()));
+
+		// We can also do it without modulo.
+		long result = 0;
+		long modulo = 10000000000L;
+		for (int i = 1; i <= 1000; i++) {
+			long temp = i;
+			for (int j = 1; j < i; j++) {
+				temp *= i;
+				temp %= modulo;
+			}
+			result += temp;
+			result %= modulo;
+		}
+
+		System.out.println(result);
 	}
 }
