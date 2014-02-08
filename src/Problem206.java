@@ -13,10 +13,10 @@ public class Problem206
 
 		// The addition numbers for this were found using a bit of trial
 		// and error. This could probably be refined to go faster.
-		// Runtime: 0.687s
+		// Runtime: 0.239s
 		long startTime = System.currentTimeMillis();
 		long end = 10000000000L;
-		for (long start = 1000000000; start <= end; start++) {
+		for (long start = 1000000000; start <= end; start += 10) {
 			long square = start * start;
 			BigInteger val = BigInteger.valueOf(square);
 			String str = val.toString();
@@ -24,10 +24,10 @@ public class Problem206
 				start += 1000000;
 			}
 			else if (str.charAt(4) != '3') {
-				start += 100;
+				start += 1000;
 			}
 			else if (str.charAt(6) != '4') {
-				start += 10;
+				start += 100;
 			}
 			else if (str.charAt(8) != '5') {
 			}
